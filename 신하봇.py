@@ -1,5 +1,6 @@
 import discord
 import asyncio
+import os
 
 client = discord.Client()
 
@@ -27,4 +28,6 @@ async def on_message(message):
         embed.set_footer(text= "아스가르드에서 1070년 이상 숙성된 최고급 와인입니다. 폐하.")
         await message.channel.send(embed=embed)
         
-client.run(token)
+        
+access_token = os.environ["BOT_TOKEN"]        
+client.run(access_token)
